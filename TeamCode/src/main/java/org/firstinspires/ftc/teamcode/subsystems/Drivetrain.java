@@ -1,7 +1,12 @@
 package org.firstinspires.ftc.teamcode.subsystems;
+import dev.nextftc.core.subsystems.Subsystem;
 import dev.nextftc.hardware.impl.MotorEx;
-import dev.nextftc.hardware.driving.MecanumDriverControlled;
-public class drivetrain {
+
+public class Drivetrain implements Subsystem {
+
+
+    public static final Drivetrain INSTANCE = new Drivetrain();
+
     // MOTOR CONFIGURATION NAMES
     // These strings are the names that we will give the motors in the FTC Robot Controller configuration.
     // IMPORTANT: The names here MUST exactly match the names configured on the robot.
@@ -22,7 +27,7 @@ public class drivetrain {
     private final MotorEx leftBackMotor = new MotorEx(leftBackName).reversed();
 
 
-    public drivetrain() {
+    private Drivetrain() {
         // The motors are already created above.
     }
 
