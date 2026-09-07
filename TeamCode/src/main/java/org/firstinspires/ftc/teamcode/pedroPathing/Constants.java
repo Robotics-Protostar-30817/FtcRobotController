@@ -18,6 +18,7 @@ public class Constants {
     public static PathConstraints pathConstraints = new PathConstraints(0.99, 100, 1, 1);
 
     //added based on subsystem classes
+
     public static MecanumConstants driveConstants=
             new MecanumConstants().maxPower(1.0)
                     .rightFrontMotorName("rightFront")
