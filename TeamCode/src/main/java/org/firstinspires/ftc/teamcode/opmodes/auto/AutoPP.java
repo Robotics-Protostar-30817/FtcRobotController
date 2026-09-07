@@ -21,7 +21,7 @@ import dev.nextftc.ftc.NextFTCOpMode;
 // to the starting point when press gamepad2.b (B - O).
 //watch the robot move physically forward/backward
 
-@Autonomous(name="Pedro Simple Drive Test ",group="Test")
+@Autonomous(name="Pedro Forward/Backward Drive Test ",group="Test")
 public class AutoPP extends OpMode {
 
     private Follower follower;
@@ -96,7 +96,7 @@ public class AutoPP extends OpMode {
 
          */
         boolean aPressed = gamepad1.a && !lastA;
-        boolean bPressed = gamepad2.b && !lastB;
+        boolean bPressed = gamepad1.b && !lastB;
 
         if (aPressed){
             follower.followPath(testForwardPath,true);
@@ -107,7 +107,7 @@ public class AutoPP extends OpMode {
             follower.followPath(testBackwardPath,true);
         }
         lastA = gamepad1.a;
-        lastB = gamepad2.b;
+        lastB = gamepad1.b;
 
         currentPos = follower.getPose();
         telemetry.addLine("Pedro localization test");
