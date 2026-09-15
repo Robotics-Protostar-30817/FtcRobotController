@@ -13,7 +13,10 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Constants {
-    public static FollowerConstants followerConstants = new FollowerConstants();
+
+    public final static double robot_weight=5.1;//kg, find the correct weight value
+    public static FollowerConstants followerConstants = new FollowerConstants()
+            .mass(robot_weight);
 
     public static PathConstraints pathConstraints = new PathConstraints(0.99, 100, 1, 1);
 
@@ -34,7 +37,7 @@ public class Constants {
     public static PinpointConstants localizerConstants=
                     new PinpointConstants().hardwareMapName("odom")
                             .distanceUnit(DistanceUnit.MM)
-                            .forwardPodY(70)
+                            .forwardPodY(70)//inches
                             .strafePodX(100)//these two should be verified by Pedro's tuning
                             .forwardEncoderDirection(GoBildaPinpointDriver.EncoderDirection.REVERSED)
                             .strafeEncoderDirection(GoBildaPinpointDriver.EncoderDirection.FORWARD)
